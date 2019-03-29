@@ -1,5 +1,4 @@
-import 'package:chart_flutter_app/user.dart';
-import 'package:flutter/material.dart';
+
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
@@ -218,4 +217,14 @@ class ListOption extends StatelessWidget {
       ),
     );
   }
+}
+
+class User {
+  final int index;
+  final String about;
+  final String name;
+  final String email;
+  final String picture;
+
+  User(this.index, this.about, this.name, this.email, this.picture);
 }
