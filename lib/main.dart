@@ -1,8 +1,7 @@
-import 'package:chart_flutter_app/before.dart';
 import 'package:chart_flutter_app/home.dart';
-import 'package:chart_flutter_app/oficial.dart';
-import 'package:flutter/material.dart';
 
+import 'package:chart_flutter_app/rest.dart';
+import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,4 +18,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

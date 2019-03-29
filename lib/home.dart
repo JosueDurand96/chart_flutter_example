@@ -1,3 +1,4 @@
+import 'package:chart_flutter_app/rest.dart';
 import 'package:flutter/material.dart';
 
 import 'package:charts_flutter/flutter.dart' as charts;
@@ -24,24 +25,40 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('STADISTICA'),
+        backgroundColor: Colors.green,
+        title: Text('Histórico de cambios'),
       ),
       body: Container(
         child: Column(
           children: <Widget>[
+            SizedBox(
+              child: Padding(
+                padding: EdgeInsets.only(top:10,right: 170),
+                child: Text('Cancha 1',style: TextStyle(fontSize: 30),),
+              )
+            ),
             Expanded(
-              flex: 2,
-              child: Container(
-                padding: EdgeInsets.only(top: 30,left: 30,right: 30),
-                child: new charts.TimeSeriesChart(
-                  _createSampleData(),
-                  animate: animate,
+              flex: 0,
+              child:Card(
+                child:  Container(
+                  margin: EdgeInsets.all(10),
+                  padding:
+                  EdgeInsets.only(top: 20, left: 10, right: 10, bottom: 0),
+                  height: 255,
+                  width: 370,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                  ),
+                  child: new charts.TimeSeriesChart(
+                    _createSampleData(),
+                    animate: animate,
 
-                  /// Customize the gridlines to use a dash pattern.
-                  primaryMeasureAxis: new charts.NumericAxisSpec(
-                    renderSpec: charts.GridlineRendererSpec(
-                      lineStyle: charts.LineStyleSpec(
-                        dashPattern: [4, 4],
+                    /// Customize the gridlines to use a dash pattern.
+                    primaryMeasureAxis: new charts.NumericAxisSpec(
+                      renderSpec: charts.GridlineRendererSpec(
+                        lineStyle: charts.LineStyleSpec(
+                          dashPattern: [4, 4],
+                        ),
                       ),
                     ),
                   ),
@@ -50,81 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Expanded(
               flex: 1,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Container(
-                    margin: EdgeInsets.only(left: 30, right: 15),
-                    height: 40,
-                    width: 130,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                    ),
-                    child: TextFormField(
-                      //  controller: departamentoControll,
-                      decoration: InputDecoration.collapsed(
-                        hintText: '978342756',
-                      ),
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(left: 105),
-                    padding: EdgeInsets.only(top: 10),
-                    height: 40,
-                    width: 60,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                    ),
-                    child: TextField(
-                      //controller: provinciaControll,
-                      decoration: InputDecoration.collapsed(
-                        hintText: 'Validar',
-                      ),
-                      onTap: () {},
-                    ),
-                  ),
-
-                ],
-              ),
-            ),
-            Expanded(
-              flex: 1,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Container(
-                    margin: EdgeInsets.only(left: 30, right: 15),
-                    height: 40,
-                    width: 130,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                    ),
-                    child: TextFormField(
-                      //  controller: departamentoControll,
-                      decoration: InputDecoration.collapsed(
-                        hintText: '978342756',
-                      ),
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(left: 105),
-                    padding: EdgeInsets.only(top: 10),
-                    height: 40,
-                    width: 60,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                    ),
-                    child: TextField(
-                      //controller: provinciaControll,
-                      decoration: InputDecoration.collapsed(
-                        hintText: 'Validar',
-                      ),
-                      onTap: () {},
-                    ),
-                  ),
-
-                ],
-              ),
+              child: ListOption(),
             ),
           ],
         ),
